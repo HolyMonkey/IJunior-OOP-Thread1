@@ -5,11 +5,6 @@ class GoodsRepository
 {
     public Good[] Goods;
 
-    public GoodsRepository()
-    {
-        Goods = new Good[0];
-    }
-
     public bool Contains(Good good)
     {
         return Goods.Contains(good);

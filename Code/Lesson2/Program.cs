@@ -7,8 +7,10 @@ class Program
 {
     public static void Main()
     {
-        GoodsRepository goods = new GoodsRepository();
-        goods.Goods = new Good[]
+        WendingMachine machine = new WendingMachine();
+        machine.Balance = 1000;
+        machine.Goods = new GoodsRepository();
+        machine.Goods.Goods = new Good[]
         {
             new Good()
             {
@@ -29,9 +31,6 @@ class Program
                 Price = 2
             }
         };
-
-        WendingMachine machine = new WendingMachine(1000, goods);
-        WendingMachine machine2 = new WendingMachine(1000, goods);
 
         WendingMachineGUI gui = new WendingMachineGUI();
         gui.Machine = machine;

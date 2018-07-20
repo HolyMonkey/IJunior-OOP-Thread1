@@ -2,15 +2,8 @@
 
 class WendingMachine
 {
-    public int Balance { get; private set; }
-
-    private GoodsRepository _goods;
-    
-    public WendingMachine(int balance, GoodsRepository goods)
-    {
-        Balance = balance;
-        _goods = goods;
-    }
+    public int Balance;
+    public GoodsRepository Goods;
 
     public int ClearBalance()
     {
@@ -18,7 +11,6 @@ class WendingMachine
         Balance = 0;
         return oldBalance;
     }
-
 
     public void ApplyOrder(Order order)
     {
@@ -31,11 +23,11 @@ class WendingMachine
 
     public Good[] GetProductList()
     {
-        return _goods.GetAvialableGoods();
+        return Goods.GetAvialableGoods();
     }
 
     public Good GetProduct(string name)
     {
-        return _goods.GetProduct(name);
+        return Goods.GetProduct(name);
     }
 }
